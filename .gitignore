@@ -1,0 +1,16 @@
+/cqa
+/node_modules
+/**/node_modules
+/tools/VerifyNPMPackage/json
+/tmp
+/json
+/.vscode
+/.idea
+/tests
+/e2eTests
+/.awcache
+/.hswcache
+/*.psd
+/**/*.orig
+/.scannerwork
+.tsbuildinfo
