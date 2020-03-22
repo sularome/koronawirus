@@ -14,3 +14,4 @@
 /**/*.orig
 /.scannerwork
 .tsbuildinfo
+.env
