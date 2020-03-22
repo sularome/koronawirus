@@ -1,6 +1,7 @@
 name: Trigger scrape
 
-on: schedule:
+on: 
+  schedule:  
   - cron: "0 8 * * 1-7"
 
 jobs:
