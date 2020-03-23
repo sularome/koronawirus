@@ -5,7 +5,7 @@ name: Scrape
 
 on:
   schedule:
-  - cron: "10 09 * * 0-6"
+  - cron: "38 16 * * 0-6"
 
 jobs:
   build:
@@ -22,6 +22,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+      env: # Or as an environment variable
+        NODE_ENV: ${{ secrets.NODE_ENV }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_SERVER: ${{ secrets.DB_SERVER }}
+        DB_DATABASE: ${{ secrets.DB_DATABASE }}
     - run: npm ci
     - run: npm run scrape
       env:
