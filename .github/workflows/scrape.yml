@@ -19,9 +19,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
       env: # Or as an environment variable
         NODE_ENV: ${{ secrets.NODE_ENV }}
         DB_USER: ${{ secrets.DB_USER }}
@@ -29,5 +26,8 @@ jobs:
         DB_PORT: ${{ secrets.DB_PORT }}
         DB_SERVER: ${{ secrets.DB_SERVER }}
         DB_DATABASE: ${{ secrets.DB_DATABASE }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run scrape
