@@ -11,21 +11,28 @@ async function App() {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
-
     app.listen(process.env.PORT, () => {
         console.log("Server running on port 3000");
     });
-    app.get("/total", (req, res) => {
-        Models.DailyStatistics.aggregate([{
+    app.get("/total(/:regionId)?", (req, res) => {
+        const hasFilter = req.params.regionId !== void 0;
+        const pipeline = [];
+        pipeline.push({
             $unwind: "$regions"
-        }, {
+        });
+        if (hasFilter) {
+            pipeline.push({
+                $match: {"regions.id": {$eq: req.params.regionId}}
+            });
+        }
+        pipeline.push({
             $group: {
                 _id: "$date",
                 deaths: {$sum: `$regions.deaths`},
                 count: {$sum: `$regions.count`}
             }
-        }
-        ]).exec(function (err, dailyStatistics) {
+        });
+        Models.DailyStatistics.aggregate(pipeline).exec(function (err, dailyStatistics) {
             if (err) {
                 console.error(err)
             }
