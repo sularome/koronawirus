@@ -7,17 +7,25 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "scrape": "node ./packages/scrape/index.js",
     "start": "node ./packages/backend/index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start:frontend": "cd packages/react_frontend && react-scripts start",
+    "build:frontend": "cd packages/react_frontend && react-scripts build",
+    "test:frontend": "cd packages/react_frontend && react-scripts test",
+    "eject:frontend": "cd packages/react_frontend && react-scripts eject"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.5"
+    "mongoose": "^5.9.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
   }
 }

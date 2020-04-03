@@ -1,21 +1,3 @@
-/cqa
-/node_modules
-/**/node_modules
-/tools/VerifyNPMPackage/json
-/tmp
-/json
-/.vscode
-/.idea
-/tests
-/e2eTests
-/.awcache
-/.hswcache
-/*.psd
-/**/*.orig
-/.scannerwork
-.tsbuildinfo
-.env
-
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies

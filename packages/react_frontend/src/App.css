@@ -1,0 +1,29 @@
+.App {
+  text-align: left;
+}
+
+.App header {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding:20px 10px;
+}
+
+.App header h1{
+  margin: 0;
+}
+
+.App header .header-section{
+  flex-grow: 1;
+  padding:10px;
+}
+
+.App header .header-section select{
+  padding: 10px 0;
+  width: 100%;
+}
+
+.App header .number-tiles {
+  font-size:20px;
+  padding: 20px 10px;
+}
