@@ -5,7 +5,7 @@ name: Scrape
 
 on:
   schedule:
-  - cron: "50 12 * * 0-6"
+  - cron: "15 09 * * 0-6"
 
 jobs:
   build:
@@ -22,17 +22,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: npm install and build
       env: # Or as an environment variable
-        test: test variable
         NODE_ENV: ${{ secrets.NODE_ENV }}
         DB_USER: ${{ secrets.DB_USER }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         DB_PORT: ${{ secrets.DB_PORT }}
         DB_SERVER: ${{ secrets.DB_SERVER }}
         DB_DATABASE: ${{ secrets.DB_DATABASE }}
-    - run: echo "|||%NODE_ENV%|||"
-    - run: echo "|||%test%|||"
-    - run: echo "|||$NODE_ENV|||"
-    - run: echo "|||$test|||"
-    - run: npm ci
-    - run: npm run scrape
+      run: | 
+        npm ci
+        npm run scrape
