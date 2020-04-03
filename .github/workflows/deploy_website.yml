@@ -32,3 +32,5 @@ jobs:
       with:
         # Build directory to deploy
         build_dir: ./packages/frontend/build
+      env:
+        GITHUB_PAT: ${{ secrets.PAT }}
