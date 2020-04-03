@@ -26,11 +26,11 @@ class App extends React.Component {
   }
 
   totalCount() {
-    return Math.max(...this.state.regionData.map(region => region.count))
+    return Math.max(...this.state.regionData.map(region => region.count));
   }
 
   deathsCount() {
-    return this.state.regionData.reduce((agg, region) => agg + region.deaths, 0);
+    return Math.max(...this.state.regionData.map(region => region.deaths));
   }
   
   onChangeRegion(e) {
