@@ -24,7 +24,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install and build
       env: # Or as an environment variable
-        test: test variable
         NODE_ENV: ${{ secrets.NODE_ENV }}
         DB_USER: ${{ secrets.DB_USER }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
@@ -32,9 +31,5 @@ jobs:
         DB_SERVER: ${{ secrets.DB_SERVER }}
         DB_DATABASE: ${{ secrets.DB_DATABASE }}
       run: | 
-        echo "|||%NODE_ENV%|||"
-        echo "|||%test%|||"
-        echo "|||$NODE_ENV|||"
-        echo "|||$test|||"
         npm ci
         npm run scrape
