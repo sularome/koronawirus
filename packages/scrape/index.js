@@ -3,7 +3,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const fs = require('fs');
 const mongoose = require('mongoose');
-const Models = require('../Models');
+const Models = require('../backend/Models');
 require("../utils/loadEnv").load();
 
 const fetchData = async () => {

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scrape": "node ./scrape/index.js",
-    "start": "node index.js",
+    "scrape": "node ./packages/scrape/index.js",
+    "start": "node ./packages/backend/index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],

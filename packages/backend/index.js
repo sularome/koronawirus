@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const express = require("express");
 const Models = require('./Models');
 const cors = require('cors');
-require("./utils/loadEnv").load();
+require("../utils/loadEnv").load();
 
 async function App() {
     const app = express();
@@ -12,7 +12,7 @@ async function App() {
         useUnifiedTopology: true
     });
     app.listen(process.env.PORT, () => {
-        console.log("Server running on port 3000");
+        console.log(`Server running on port ${process.env.PORT}`);
     });
     app.get("/total(/:regionId)?", (req, res) => {
         const hasFilter = req.params.regionId !== void 0;
