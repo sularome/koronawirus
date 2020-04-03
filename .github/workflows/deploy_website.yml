@@ -17,15 +17,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
     - name: npm install and build
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
       run: | 
         npm ci
         npm run build:frontend
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
 
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v1.3.0
